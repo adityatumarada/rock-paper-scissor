@@ -5,6 +5,7 @@ var computerScore=0;
 const userScore_span=document.getElementById("user-score");
 const computerScore_span=document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
+const result_div=document.querySelector(".result > p");
 const rock_div=document.getElementById("r");
 const paper_div=document.getElementById("p");
 const scissor_div=document.getElementById("s");
@@ -83,30 +84,39 @@ function game(userChoice){
     switch (userChoice+computerChoice){
     	case "rs":
             win(userChoice,computerChoice);
+            result_div.innerHTML="Rock beats Scissors. You Win.";
             break;
     	case "pr":
             win(userChoice,computerChoice);
+            result_div.innerHTML="Paper beats Rock. You Win!";
     		break;
     	case "sp":
             win(userChoice,computerChoice);
+            result_div.innerHTML="Scissors beats Paper. You Win!";
     		break;
     	case "sr":
     		lose(userChoice,computerChoice);
+        result_div.innerHTML="Scissors loses to Rock. You Lost!";
     		break;
     	case "rp":
     		lose(userChoice,computerChoice);
+        result_div.innerHTML="Rock loses to Paper. You Lost!";
     		break;
     	case "ps":
 			lose(userChoice,computerChoice);
+      result_div.innerHTML="Paper loses to Scissors. You Lost!";
     		break;
     	case "rr":
     		draw(userChoice,computerChoice);
+        result_div.innerHTML="It's a Draw";
     		break;
     	case "pp":
     		draw(userChoice,computerChoice);
+        result_div.innerHTML="It's a Draw";
     		break;
     	case "ss":
     		draw(userChoice,computerChoice);
+        result_div.innerHTML="It's a Draw";
     		break;
     }}
 
